@@ -16,7 +16,6 @@ body {
   font-family: "poppins", sans-serif;
   background-color: rgba(32, 28, 16, 0.8);
   color: white;
-  min-height: 5000px;
 }
 
 /* navbar */
@@ -235,6 +234,18 @@ body {
   color: #fff;
   background-color: var(--primary);
   cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+/* footer */
+footer {
+  background-color: rgba(255, 187, 0, 0.8);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+footer .socials {
+  padding: 1rem 0;
 }
 
 /* media queris */
