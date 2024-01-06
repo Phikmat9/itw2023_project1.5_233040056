@@ -1,7 +1,8 @@
 :root {
   --primary: #9e4d02;
   --bg: #f7f7f7;
-  -bg2: #ffbb00cc;
+  --BG2: #ffbb00cc;
+  --BG3: #f7a800cc;
 }
 
 * {
@@ -15,63 +16,27 @@
 
 body {
   font-family: "poppins", sans-serif;
-  background-color: rgba(32, 28, 16, 0.8);
-  color: white;
+  background-color: var(--BG2);
+  color: #000000;
 }
 
 /* navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.4rem 7%;
-  background-color: rgba(255, 187, 0, 0.8);
-  border-bottom: 1px solid var(--primary);
+nav {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--bg);
 }
-.navbar .navbar-logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--bg);
-  font-style: italic;
+.navbar {
+  position: fixed;
+  background-color: var(--primary);
 }
-.navbar .navbar-logo span {
+.container-fluid .navbar-brand a {
+  color: #000000;
+}
+.container-fluid .navbar-brand a span {
   color: var(--primary);
-}
-.navbar .navbar-nav a {
-  color: var(--bg);
-  display: inline-block;
-  font-size: 1.3rem;
-  margin: 0 1rem;
-}
-.navbar .navbar-nav a:hover {
-  color: var(--primary);
-}
-.navbar.navbar-nav a::after {
-  content: "";
-  display: block;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid var(--primary);
-  transform: scaleX(0);
-  transition: 0.2s linear;
-}
-.navbar .navbar-nav a:hover::after {
-  transform: scaleX(0.5s);
-}
-.navbar .navbar-extra a {
-  color: var(--primary);
-  margin: 0 0.5rem;
-}
-.navbar .navbar-extra a:hover {
-  color: var(--primary);
-}
-
-#hamburger-menu {
-  display: none;
 }
 
 /* hero section */
@@ -110,9 +75,8 @@ body {
   font-size: 1.6rem;
   margin-top: 1rem;
   line-height: 1.4;
-  font-weight: 100;
-  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-  mix-blend-mode: difference;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(1, 1, 3, 0.5);
 }
 .hero .content .cta {
   margin-top: 1rem;
@@ -135,7 +99,7 @@ body {
 .menu h2,
 .contact h2 {
   text-align: center;
-  font-size: 2.6rem;
+  font-size: 3rem;
   margin-bottom: 3rem;
 }
 .about h2 span,
@@ -145,17 +109,16 @@ body {
 }
 .about .row {
   display: flex;
+  flex-wrap: wrap;
 }
 .about .row .about-img {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
 }
 .about .row .about-img img {
   height: 35rem;
+  width: 35rem;
 }
 .about .row .content {
-  flex: auto;
   padding: 5rem;
 }
 .about .row .content h3 {
@@ -165,7 +128,7 @@ body {
 .about .row .content p {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 1.6;
 }
 
@@ -179,21 +142,21 @@ body {
   text-align: center;
   max-width: 30rem;
   margin: auto;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 1.6;
 }
 .menu .row {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5rem;
-  justify-content: center;
+  margin-top: 2rem;
+  min-width: 60rem;
 }
 .menu .row .menu-card {
   text-align: center;
 }
 .menu .row .menu-card img {
   border-radius: 10%;
-  width: 300px;
+  width: 30rem;
   margin: 1rem auto 0.5rem;
   padding: 0.5rem;
 }
@@ -264,36 +227,6 @@ footer .socials {
   html {
     font-size: 62.5%;
   }
-
-  #hamburger-menu {
-    display: inline-block;
-  }
-  .navbar .navbar-nav {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    background-color: rgba(255, 187, 0, 0.8);
-    width: 30rem;
-    height: 100vh;
-    transition: 0.3s;
-  }
-  .navbar .navbar-nav.active {
-    right: 0;
-  }
-  .navbar .navbar-nav a {
-    color: var(--bg);
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5rem;
-    font-size: 2rem;
-  }
-  .navbar .navbar-nav a::after {
-    transform-origin: 0 0;
-  }
-  .navbar .navbar-nav a:hover::after {
-    transform: scale(0.2s);
-  }
-
   .about .row .about-img img {
     height: 24rem;
     object-fit: cover;
@@ -327,5 +260,13 @@ footer .socials {
 @media (max-width: 450px) {
   html {
     font-size: 55%;
+  }
+  .about .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
   }
 }
